@@ -1,0 +1,92 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Memescraper</title>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:400,500,900,700,100italic,300italic,400italic,500italic,700italic,900italic,300,100''><link rel="stylesheet" href="{% static 'style.css' %}">
+<link rel="shortcut icon" type="image/png" href="/static/favicon.png">
+</head>
+<body>
+
+  <center>
+
+       <div class="infinite-container">
+          <div class="tile" style="   outline-style: solid; outline-width: 10px; outline-color: #99aeff; "> 
+            <a href="/random"><img src='static/random.gif'/></a>
+          <div> <h1> &#8205;  </h1> </div>
+          <div> <h1> &#8205;  </h1> </div>
+          <div> <h1> &#8205;  </h1> </div>
+          <div> <h1> &#8205;  </h1> </div>
+          <div>
+            <h1>Random</h1>
+          </div>
+           </div>
+
+
+
+              <div class="tile" style="   outline-style: solid; outline-width: 10px; outline-color: #99aeff; "> 
+                <a href="/./"><img src='static/fresh.gif'/></a>
+              <div> <h1> &#8205;  </h1> </div>
+              <div> <h1> &#8205;  </h1> </div>
+              <div> <h1> &#8205;  </h1> </div>
+              <div> <h1> &#8205;  </h1> </div>
+              <div>
+                <h1>Fresh</h1>
+              </div>
+               </div>
+
+
+
+            {% for post in posts %}
+         <div class="tile infinite-item">
+         <a href="{{post.image}}"><img  src="{{post.image}}"/></a>
+         <div> <h1> &#8205;  </h1> </div>
+         <div> <h1> &#8205;  </h1> </div>
+         <div> <h1> &#8205;  </h1> </div>
+         <div> <h1> &#8205;  </h1> </div>
+         <div>
+           <h1  >See fullscreen </h1>
+         </div>                   
+        </div>
+          {% endfor %}
+          </div>
+                {% if page_obj.has_next %}
+                <a class="infinite-more-link" href="?page={{ page_obj.next_page_number }}"></a>
+                {% endif %}
+                <div class="d-flex justify-content-center" style="display:none;">
+                <div class="spinner-border" role="status">
+                      <span class="sr-only">Loading...</span>
+                    </div>
+                </div>
+            </div>  
+  </center>
+
+
+    <script src="/static/js/jquery-2.2.4.min.js"></script>
+    <script src="/static/js/jquery.waypoints.min.js"></script>
+    <script src="/static/js/infinite.min.js"></script>
+    <script>
+    var infinite = new Waypoint.Infinite({
+        element: $('.infinite-container')[0],
+        handler: function(direction) {
+
+    },
+    offset: 'bottom-in-view',
+
+    onBeforePageLoad: function () {
+    $('.spinner-border').show();
+    },
+    onAfterPageLoad: function () {
+    $('.spinner-border').hide();
+    }
+
+    });
+
+    </script>
+<!-- partial -->
+  <script  src="{% static 'script.js' %}"></script>
+
+</body>
+</html>
