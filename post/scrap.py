@@ -7,18 +7,15 @@ from apscheduler.schedulers.background import BackgroundScheduler
 from django.db import IntegrityError
 
 url = 'https://www.reddit.com/r/memes/new/'
-chrome_driver_path = 'C:/Dev/memescraper/memescraper/static/chromedriver'
 
 chrome_options = Options()
+chrome_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
 chrome_options.add_argument("--headless")
 chrome_options.add_argument(" - incognito")
 
-webdriver = webdriver.Chrome(
-	executable_path=chrome_driver_path,
-	options=chrome_options
-	)
+driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=chrome_options)
 
-driver = webdriver
+
 
 driver.get(url)
 
