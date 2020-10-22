@@ -1,6 +1,7 @@
 from selenium import webdriver 
 from selenium.webdriver.chrome.options import Options
 from .models import Post
+import os
 
 from datetime import datetime
 from apscheduler.schedulers.background import BackgroundScheduler
