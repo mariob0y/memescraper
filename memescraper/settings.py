@@ -26,7 +26,7 @@ SECRET_KEY = '#=fltj&lf!&=x=y(5-m=6c)%ut8pvvev_hx8@ez0zu5-6w12sq'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-# ALLOWED_HOSTS = ['256d887d3f59.ngrok.io']
+ALLOWED_HOSTS = ['https://memescraper.herokuapp.com/']
 
 
 # Application definition
