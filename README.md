@@ -29,5 +29,7 @@ To run app locally, do next steps:
 3. In root folder (where manage.py located), run commands:  
 ```
 pip install requirements.txt 
+```
+```
 python manage.py runserver
 ```
