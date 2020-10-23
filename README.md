@@ -21,3 +21,12 @@ Make sure that following builpacks are present:
 [Google Chrome buildpack](https://github.com/heroku/heroku-buildpack-google-chrome),
 [Chromedriver buildpack](https://github.com/heroku/heroku-buildpack-chromedriver).
 More about Chrome and chromedriver [on Heroku](https://www.youtube.com/watch?v=Ven-pqwk3ec&feature=youtu.be)
+
+## Run locally
+To run app locally, do next steps:  
+1. Download files.  
+2. In **posts/scrap.py** uncomment *Local* section and comment *Heroku* section, and edit **chrome_driver_path** to absolute path of chromedriver at your machine.
+3. In root folder (where manage.py located), run command:  
+```
+python manage.py runserver
+```
