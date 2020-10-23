@@ -39,5 +39,5 @@ def fetch_reddit():
 def start():
 
     scheduler = BackgroundScheduler()
-    scheduler.add_job(fetch_reddit, 'interval', minutes=3)
+    scheduler.add_job(fetch_reddit, 'interval', seconds=30)
     scheduler.start()
