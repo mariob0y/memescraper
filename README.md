@@ -26,7 +26,8 @@ More about Chrome and chromedriver [on Heroku](https://www.youtube.com/watch?v=V
 To run app locally, do next steps:  
 1. Download files.  
 2. In **posts/scrap.py** uncomment *Local* section and comment *Heroku* section, and edit **chrome_driver_path** to absolute path of chromedriver at your machine.
-3. In root folder (where manage.py located), run command:  
+3. In root folder (where manage.py located), run commands:  
 ```
+pip install requirements.txt 
 python manage.py runserver
 ```
