@@ -7,6 +7,3 @@ class Post(models.Model):
 	image = models.URLField(blank=True, null=True, unique=True)
 	content = models.TextField(blank=True, null=True)
 	date = models.DateTimeField(auto_now_add=True)
-	#To make in name, not objXXX
-	def __str__(self):
-		return self.title
