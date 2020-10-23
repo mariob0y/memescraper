@@ -15,15 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from post.views import home, random, PostsView, RandomView
+from post.views import PostsView, RandomView
 
 from django.conf import settings 
 from django.conf.urls.static import static 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    # path('', home),
-    # path('random', random),
+    path('admin', admin.site.urls),
     path('', PostsView.as_view(),  name="posts"),
     path('random', RandomView.as_view(),  name="random"),
   ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
