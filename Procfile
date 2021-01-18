@@ -1,1 +1,1 @@
-web: gunicorn memescraper.wsgi
+web: gunicorn planeks-csv-generator.wsgi
